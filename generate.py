@@ -32,8 +32,12 @@ def get_data():
     return group_data_by_party_region(data)
 
 def generate_html(candidates_by_party_region):
-    all_parties = list(sorted({party for party, _region in candidates_by_party_region.keys()}))
     all_regions = list(sorted({region for _party, region in candidates_by_party_region.keys()}))
+
+    all_parties = list({party for party, _region in candidates_by_party_region.keys()})
+    candidate_count_func = lambda party: sum(len(candidates_by_party_region[party, rgn]) for rgn in all_regions)
+    all_parties.sort(key=lambda party: (-candidate_count_func(party), party))
+
     setting_list = ['gender', 'email', 'twitter', 'facebook', 'image', 'contact']
 
     yield '<link href="eu-candidate-grid.css" rel="stylesheet" type="text/css" />'
