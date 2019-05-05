@@ -41,19 +41,18 @@ def generate_html(candidates_by_party_region):
     setting_list = ['gender', 'email', 'twitter', 'facebook', 'image', 'contact']
 
     yield '<link href="eu-candidate-grid.css" rel="stylesheet" type="text/css" />'
-    yield '<div id="candidate-grid">'
-
-    for setting in setting_list:
-        yield '<span tabindex="1" class="candidate-grid-setting" id="{setting}">'.format(setting=setting)
+    yield '<script>function setting(key, value) { document.getElementById("candidate-grid").setAttribute(key, value); return false; }</script>'
+    yield '<div id="candidate-grid" mode="gender" firstonly="yes">'
 
     yield '<div class="headings">'
     for setting in setting_list:
-        yield '<a class="heading heading-{setting}" href="#{setting}" onclick="document.getElementById(&quot;{setting}&quot;).focus(); return false;">{setting}</a>'.format(setting=setting)
+        yield '<a class="heading heading-{setting}" href="#" onclick="return setting(&quot;mode&quot;, &quot;{setting}&quot;)">{setting}</a>'.format(setting=setting)
     yield '</div>'
 
     yield '<div class="headings">'
-    yield '<a class="heading" href="#" onclick="document.getElementById(&quot;candidate-grid&quot;).setAttribute(&quot;firstonly&quot;, &quot;yes&quot;); return false;">top candidate only</a>'
-    yield '<a class="heading" href="#" onclick="document.getElementById(&quot;candidate-grid&quot;).setAttribute(&quot;firstonly&quot;, &quot;no&quot;); return false;">all candidates</a>'
+    yield '<a class="heading heading-firstonly-yes" href="#" onclick="return setting(&quot;firstonly&quot;, &quot;yes&quot;)">top candidate only</a>'
+    yield '<a class="heading heading-firstonly-two" href="#" onclick="return setting(&quot;firstonly&quot;, &quot;two&quot;)">top two</a>'
+    yield '<a class="heading heading-firstonly-no" href="#" onclick="return setting(&quot;firstonly&quot;, &quot;no&quot;)">all candidates</a>'
     yield '</div>'
 
     yield '<table>'
@@ -80,8 +79,7 @@ def generate_html(candidates_by_party_region):
             yield '</td>'
         yield '</tr>'
     yield '</table>'
-    for _setting in setting_list:
-        yield '</span>'
+
     yield '</div>'
     yield 'Data from: <a href="https://candidates.democracyclub.org.uk/help/api">Democracy Club</a>'
     

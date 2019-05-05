@@ -1,4 +1,5 @@
-#candidate-grid td {
+#candidate-grid td,
+#candidate-grid th {
   white-space: nowrap;
 }
 #candidate-grid .candidate {
@@ -15,60 +16,85 @@
 #candidate-grid .headings .heading {
   margin: 0.3em;
 }
-#candidate-grid #gender:focus .heading-gender {
+#candidate-grid[mode="gender"] .heading-gender {
   font-weight: bold;
 }
-#candidate-grid #email:focus .heading-email {
+#candidate-grid[mode="email"] .heading-email {
   font-weight: bold;
 }
-#candidate-grid #twitter:focus .heading-twitter {
+#candidate-grid[mode="twitter"] .heading-twitter {
   font-weight: bold;
 }
-#candidate-grid #facebook:focus .heading-facebook {
+#candidate-grid[mode="facebook"] .heading-facebook {
   font-weight: bold;
 }
-#candidate-grid #image:focus .heading-image {
+#candidate-grid[mode="image"] .heading-image {
   font-weight: bold;
 }
-#candidate-grid #contact:focus .heading-contact {
+#candidate-grid[mode="contact"] .heading-contact {
+  font-weight: bold;
+}
+#candidate-grid[firstonly="yes"] .heading-firstonly-yes {
+  font-weight: bold;
+}
+#candidate-grid[firstonly="no"] .heading-firstonly-no {
+  font-weight: bold;
+}
+#candidate-grid[firstonly="two"] .heading-firstonly-two {
   font-weight: bold;
 }
 
-#candidate-grid #gender:focus .candidate.gender-male {
+#candidate-grid[mode="gender"] .candidate.gender-male {
   background: #7799ff;
 }
-#candidate-grid #gender:focus .candidate.gender-female {
+#candidate-grid[mode="gender"] .candidate.gender-female {
   background: #ff7799;
 }
 
-#candidate-grid #facebook:focus .candidate.facebook-yes {
+#candidate-grid[mode="facebook"] .candidate.facebook-yes {
   background: #3b5999;
 }
 
-#candidate-grid #twitter:focus .candidate.twitter-yes {
+#candidate-grid[mode="twitter"] .candidate.twitter-yes {
   background: #55acee;
 }
 
-#candidate-grid #email:focus .candidate.email-yes {
+#candidate-grid[mode="email"] .candidate.email-yes {
   background: #ddbb44;
 }
 
-#candidate-grid #image:focus .candidate.image-yes {
+#candidate-grid[mode="image"] .candidate.image-yes {
   background: #22bb44;
 }
 
-#candidate-grid #contact:focus .candidate {
+#candidate-grid[mode="contact"] .candidate {
   background: #ff7777;
 }
-#candidate-grid #contact:focus .candidate.twitter-yes,
-#candidate-grid #contact:focus .candidate.email-yes,
-#candidate-grid #contact:focus .candidate.facebook-yes {
+#candidate-grid[mode="contact"] .candidate.twitter-yes,
+#candidate-grid[mode="contact"] .candidate.email-yes,
+#candidate-grid[mode="contact"] .candidate.facebook-yes {
   background: #77ff99;
 }
 
 #candidate-grid[firstonly="yes"] .candidate {
   display: none
 }
+#candidate-grid[firstonly="yes"] .candidate.pos-,
 #candidate-grid[firstonly="yes"] .candidate.pos-1 {
-  display: block;
+  display: inline-block;
+}
+#candidate-grid[firstonly="yes"] tr.party-Independent {
+  display: none;
+}
+
+#candidate-grid[firstonly="two"] .candidate {
+  display: none
+}
+#candidate-grid[firstonly="two"] .candidate.pos-,
+#candidate-grid[firstonly="two"] .candidate.pos-1,
+#candidate-grid[firstonly="two"] .candidate.pos-2 {
+  display: inline-block;
+}
+#candidate-grid[firstonly="two"] tr.party-Independent {
+  display: none;
 }
