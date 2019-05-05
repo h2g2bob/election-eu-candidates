@@ -83,6 +83,7 @@ def generate_html(candidates_by_party_region):
     for _setting in setting_list:
         yield '</span>'
     yield '</div>'
+    yield 'Data from: <a href="https://candidates.democracyclub.org.uk/help/api">Democracy Club</a>'
     
 
 def main():
