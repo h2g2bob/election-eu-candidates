@@ -52,8 +52,8 @@ def generate_html(candidates_by_party_region):
     yield '</div>'
 
     yield '<div class="headings">'
-    yield '<a class="heading" href="#" onclick="document.getElementById(&quot;candidate-grid&quot;).setAttribute(&quot;firstonly&quot;, &quot;yes&quot;); return false;">one</a>'
-    yield '<a class="heading" href="#" onclick="document.getElementById(&quot;candidate-grid&quot;).setAttribute(&quot;firstonly&quot;, &quot;no&quot;); return false;">all</a>'
+    yield '<a class="heading" href="#" onclick="document.getElementById(&quot;candidate-grid&quot;).setAttribute(&quot;firstonly&quot;, &quot;yes&quot;); return false;">top candidate only</a>'
+    yield '<a class="heading" href="#" onclick="document.getElementById(&quot;candidate-grid&quot;).setAttribute(&quot;firstonly&quot;, &quot;no&quot;); return false;">all candidates</a>'
     yield '</div>'
 
     yield '<table>'
