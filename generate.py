@@ -87,7 +87,7 @@ def generate_html(candidates_by_party_region):
 def main():
     candidates_by_party_region = get_data()
     html = ''.join(generate_html(candidates_by_party_region))
-    with open('eu-candidate-grid.html', 'w') as f:
+    with open('eu-candidate-grid.html', 'w', encoding="utf8") as f:
         f.write(html)
 
 if __name__ == '__main__':
