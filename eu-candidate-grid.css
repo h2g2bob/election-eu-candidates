@@ -1,7 +1,7 @@
-.candidate-grid td {
+#candidate-grid td {
   white-space: nowrap;
 }
-.candidate-grid .candidate {
+#candidate-grid .candidate {
   display: inline-block;
   height: 0.5em;
   width: 0.5em;
@@ -9,66 +9,66 @@
   background: #cccccc;
 }
 
-.candidate-grid .headings {
+#candidate-grid .headings {
   text-align: center;
 }
-.candidate-grid .headings .heading {
+#candidate-grid .headings .heading {
   margin: 0.3em;
 }
-.candidate-grid #gender:focus .heading-gender {
+#candidate-grid #gender:focus .heading-gender {
   font-weight: bold;
 }
-.candidate-grid #email:focus .heading-email {
+#candidate-grid #email:focus .heading-email {
   font-weight: bold;
 }
-.candidate-grid #twitter:focus .heading-twitter {
+#candidate-grid #twitter:focus .heading-twitter {
   font-weight: bold;
 }
-.candidate-grid #facebook:focus .heading-facebook {
+#candidate-grid #facebook:focus .heading-facebook {
   font-weight: bold;
 }
-.candidate-grid #image:focus .heading-image {
+#candidate-grid #image:focus .heading-image {
   font-weight: bold;
 }
-.candidate-grid #contact:focus .heading-contact {
+#candidate-grid #contact:focus .heading-contact {
   font-weight: bold;
 }
 
-.candidate-grid #gender:focus .candidate.gender-male {
+#candidate-grid #gender:focus .candidate.gender-male {
   background: #7799ff;
 }
-.candidate-grid #gender:focus .candidate.gender-female {
+#candidate-grid #gender:focus .candidate.gender-female {
   background: #ff7799;
 }
 
-.candidate-grid #facebook:focus .candidate.facebook-yes {
+#candidate-grid #facebook:focus .candidate.facebook-yes {
   background: #3b5999;
 }
 
-.candidate-grid #twitter:focus .candidate.twitter-yes {
+#candidate-grid #twitter:focus .candidate.twitter-yes {
   background: #55acee;
 }
 
-.candidate-grid #email:focus .candidate.email-yes {
+#candidate-grid #email:focus .candidate.email-yes {
   background: #ddbb44;
 }
 
-.candidate-grid #image:focus .candidate.image-yes {
+#candidate-grid #image:focus .candidate.image-yes {
   background: #22bb44;
 }
 
-.candidate-grid #contact:focus .candidate {
+#candidate-grid #contact:focus .candidate {
   background: #ff7777;
 }
-.candidate-grid #contact:focus .candidate.twitter-yes,
-.candidate-grid #contact:focus .candidate.email-yes,
-.candidate-grid #contact:focus .candidate.facebook-yes {
+#candidate-grid #contact:focus .candidate.twitter-yes,
+#candidate-grid #contact:focus .candidate.email-yes,
+#candidate-grid #contact:focus .candidate.facebook-yes {
   background: #77ff99;
 }
 
-.candidate-grid .candidate {
-  opacity: 0.3;
+#candidate-grid[firstonly="yes"] .candidate {
+  display: none
 }
-.candidate-grid .candidate.pos-1 {
-  opacity: 1.0;
+#candidate-grid[firstonly="yes"] .candidate.pos-1 {
+  display: block;
 }

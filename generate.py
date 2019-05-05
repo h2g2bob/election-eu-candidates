@@ -37,7 +37,7 @@ def generate_html(candidates_by_party_region):
     setting_list = ['gender', 'email', 'twitter', 'facebook', 'image', 'contact']
 
     yield '<link href="eu-candidate-grid.css" rel="stylesheet" type="text/css" />'
-    yield '<div class="candidate-grid">'
+    yield '<div id="candidate-grid">'
 
     for setting in setting_list:
         yield '<span tabindex="1" class="candidate-grid-setting" id="{setting}">'.format(setting=setting)
@@ -45,6 +45,11 @@ def generate_html(candidates_by_party_region):
     yield '<div class="headings">'
     for setting in setting_list:
         yield '<a class="heading heading-{setting}" href="#{setting}" onclick="document.getElementById(&quot;{setting}&quot;).focus(); return false;">{setting}</a>'.format(setting=setting)
+    yield '</div>'
+
+    yield '<div class="headings">'
+    yield '<a class="heading" href="#" onclick="document.getElementById(&quot;candidate-grid&quot;).setAttribute(&quot;firstonly&quot;, &quot;yes&quot;); return false;">one</a>'
+    yield '<a class="heading" href="#" onclick="document.getElementById(&quot;candidate-grid&quot;).setAttribute(&quot;firstonly&quot;, &quot;no&quot;); return false;">all</a>'
     yield '</div>'
 
     yield '<table>'
